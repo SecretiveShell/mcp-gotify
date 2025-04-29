@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# https://github.com/wong2/mcp-cli
+config.json

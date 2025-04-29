@@ -1,7 +1,7 @@
 [project]
 name = "mcp-gotify"
 version = "0.1.0"
-description = "Add your description here"
+description = "MCP server for sending gotify notifications"
 readme = "README.md"
 authors = [
     { name = "TerminalMan", email = "84923604+SecretiveShell@users.noreply.github.com" }
@@ -15,7 +15,7 @@ dependencies = [
 
 [project.scripts]
 mcp-gotify = "mcp_gotify:main"
-
+mcp-gotify-sse = "mcp_gotify:main_sse"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
