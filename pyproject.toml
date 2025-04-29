@@ -1,0 +1,21 @@
+[project]
+name = "mcp-gotify"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "TerminalMan", email = "84923604+SecretiveShell@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=2.2.5",
+    "httpx>=0.28.1",
+    "mcp>=1.6.0",
+]
+
+[project.scripts]
+mcp-gotify = "mcp_gotify:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
