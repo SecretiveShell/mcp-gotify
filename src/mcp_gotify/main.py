@@ -6,10 +6,12 @@ mcp: FastMCP = FastMCP(
     name="mcp-gotify",
 )
 
+
 @mcp.tool(
     name="send_notification"
+    , description="Send a notification to Gotify"
 )
-async def send_notification(title:str, message: str) -> str:
+async def send_notification(title: str, message: str, priority: int = 5, content_type: str = "text/markdown") -> str:
     """Send a notification to Gotify"""
 
     if not GOTIFY_TOKEN:
@@ -20,7 +22,12 @@ async def send_notification(title:str, message: str) -> str:
     data = {
         "title": title,
         "message": message,
-        "priority": 5,
+        "priority": priority,
+        "extras": {
+            "client::display": {
+                "contentType": content_type
+            }
+        }
     }
 
     async with AsyncClient() as client:
